@@ -1,0 +1,125 @@
+# Instructions are for Ubuntu 20.04
+
+
+------------------------
+
+# I downloaded 'Model Soups' code on 2023-02-25 from the github repo at
+# https://github.com/mlfoundations/model-soups
+# Of course, you don't have to do that.
+
+# I create also a 'data' and 'models' subdirectory.
+
+------------------------
+
+
+# (1) Setup a proper conda environment for ML code with pytorch etc..
+
+# First, I setup a proper CONDA environment (Python 3.9, Pytorch 1.12 etc.).
+# See our wiki at https://digital-wiki.joanneum.at/pages/viewpage.action?pageId=121013952
+
+conda create --name manifoldmixms python=3.9
+conda activate manifoldmixms
+
+conda install pytorch=1.13=py3.9_cuda11.6_cudnn8.3.2_0 torchvision cudatoolkit=11.5 pytorch-lightning=1.8 -c pytorch -c nvidia -c conda-forge
+
+pip install opencv-contrib-python matplotlib
+
+# hydra framework
+pip install hydra-core hydra-colorlog
+
+# others
+pip install python-dotenv rich pytest sh
+pip install scikit-learn scipy
+pip install seaborn pudb tabulate
+pip install wget requests ftfy regex tqdm 
+pip install pandas
+
+------------------------
+
+# ( ) Install CLIP and ImageNetV2
+# These packages are needed for Model Soups.
+
+# Taken from https://github.com/mlfoundations/model-soups/blob/main/environment.md
+pip install git+https://github.com/openai/CLIP.git@40f5484c1c74edd83cb9cf687c6ab92b28d8b656
+# Note: I do NOT install 'ImageNetV2_pytorch' via pip, because I have to modify it slightly (for Pytorch >= 3.9,
+# in the 'glob' function the default for 'recursive' has changed ...)
+# I have my own (modified) local version at '<manifoldmixms_rootdir>/imagenetv2_pytorch_jrs'
+
+
+------------------------
+
+# ( ) Install further packages which I need for my extensions for ManifoldMixMS algorithm0
+
+# Facebook's Nevergrad optimizer (collection) for blackbox derivative-free optimization
+pip install nevergrad
+
+-------------------------
+------------------------
+
+
+# ( ) Download several Dataset which are needed for Model Soups.
+# See the respective instructions at https://github.com/mlfoundations/model-soups/blob/main/datasets.md
+
+# Note: It seems the downloaded stuff is only the 'validation set' of the
+# respective datasets ..
+
+# Open a terminal at the model soup root directory (directory 'manifoldmixms')
+
+# Do a SVN CHECKOUT of the directory '<manifoldmixms_rootdir>/../manifoldmixms_datasets' !!
+
+# Set data directory via command:
+# "export DATA_LOCATION=<manifoldmixms_rootdir>/../manifoldmixms_datasets"
+
+# Go into data directory via command: 'cd $DATA_LOCATION'
+
+# Execute all, EXCEPT for the first two, shell commands given at 
+# https://github.com/mlfoundations/model-soups/blob/main/datasets.md
+# Note I skipped downloading Objectnet (for now) due to its large size.
+
+# Note: You can open _multiple_ terminal windows and invoke in each terminal
+# a different 'wget' command (for a different dataset). This speeds up things.
+
+# Note the 'ObjectNet' dataset is the largest (and slowest).
+# It can take 2-3 days to download it.
+# The password for extracting the objectnet ZIP is: objectnetisatestset
+# See https://objectnet.dev/download.html
+
+# For the (original?) ImageNet dataset, you have to login at Stanford and download it.
+
+# Additionally, you have also to rename the ImageNetV2 folder from
+# '.../manifoldmixms_datasets/imagenetv2-matched-frequency-format-val' 
+# to '.../manifoldmixms_datasets/ImageNetV2-matched-frequency'
+
+-------------------------
+
+# ( ) Download the models needed for Model soups
+
+# Open a terminal and switch to the ManifoldMixMS root directory.
+# Execute then the following command there:
+# python main.py --download-models --model-location ./models
+# See step (1) in https://github.com/mlfoundations/model-soups
+# This can take 1-2 hours.
+# Note if it breaks down at a certain index 'i' (e.g. idx '3'), restart it via command:
+# python main_modelsoup.py --download-models --model-location ./models --download_models_startidx=3
+
+------------------------
+
+# ( ) Try out 'Greedy soup' 
+
+# Open a terminal and navigate to ManifoldMixMS root directory.
+
+# Execute the following command to evaluate all models on the validation dataset of 'imagenet-a'
+# and save the results (I think in a JSON).
+#   python main_modelsoup.py --eval-individual-models --data-location ../manifoldmixms_datasets --model-location ./models
+# See step (2) in https://github.com/mlfoundations/model-soups
+
+# Execute the following command to run now the 'greedy soup' algorithm.
+# and save the results (I think in a JSON).
+#   python main_modelsoup.py --greedy-soup --data-location ../manifoldmixms_datasets --model-location ./models
+# See step (4) in https://github.com/mlfoundations/model-soups
+
+
+
+
+
+

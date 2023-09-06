@@ -1,0 +1,162 @@
+Note if individual model results could not be find, it might be because you called 'evaluate-soups'
+Testing model 1 of 72
+Potential greedy soup val acc 0.8362692307692308, best so far 0.8305.
+Adding this model to soup. New soup is ['model_43', 'model_44']
+Testing model 2 of 72
+Potential greedy soup val acc 0.8356923076923077, best so far 0.8362692307692308.
+Testing model 3 of 72
+Potential greedy soup val acc 0.8346538461538462, best so far 0.8362692307692308.
+Testing model 4 of 72
+Potential greedy soup val acc 0.8356153846153846, best so far 0.8362692307692308.
+Testing model 5 of 72
+Potential greedy soup val acc 0.8338461538461538, best so far 0.8362692307692308.
+Testing model 6 of 72
+Potential greedy soup val acc 0.8354230769230769, best so far 0.8362692307692308.
+Testing model 7 of 72
+Potential greedy soup val acc 0.8358461538461538, best so far 0.8362692307692308.
+Testing model 8 of 72
+Potential greedy soup val acc 0.8351923076923077, best so far 0.8362692307692308.
+Testing model 9 of 72
+Potential greedy soup val acc 0.8341923076923077, best so far 0.8362692307692308.
+Testing model 10 of 72
+Potential greedy soup val acc 0.8373846153846154, best so far 0.8362692307692308.
+Adding this model to soup. New soup is ['model_43', 'model_44', 'model_32']
+Testing model 11 of 72
+Potential greedy soup val acc 0.8370384615384615, best so far 0.8373846153846154.
+Testing model 12 of 72
+Potential greedy soup val acc 0.836076923076923, best so far 0.8373846153846154.
+Testing model 13 of 72
+Potential greedy soup val acc 0.8371538461538461, best so far 0.8373846153846154.
+Testing model 14 of 72
+Potential greedy soup val acc 0.8351153846153846, best so far 0.8373846153846154.
+Testing model 15 of 72
+Potential greedy soup val acc 0.8358076923076924, best so far 0.8373846153846154.
+Testing model 16 of 72
+Potential greedy soup val acc 0.8382692307692308, best so far 0.8373846153846154.
+Adding this model to soup. New soup is ['model_43', 'model_44', 'model_32', 'model_47']
+Testing model 17 of 72
+Potential greedy soup val acc 0.8401538461538461, best so far 0.8382692307692308.
+Adding this model to soup. New soup is ['model_43', 'model_44', 'model_32', 'model_47', 'model_50']
+Testing model 18 of 72
+Potential greedy soup val acc 0.8388076923076923, best so far 0.8401538461538461.
+Testing model 19 of 72
+Potential greedy soup val acc 0.8377307692307693, best so far 0.8401538461538461.
+Testing model 20 of 72
+Potential greedy soup val acc 0.8380384615384615, best so far 0.8401538461538461.
+Testing model 21 of 72
+Potential greedy soup val acc 0.8400384615384615, best so far 0.8401538461538461.
+Testing model 22 of 72
+Potential greedy soup val acc 0.8396923076923077, best so far 0.8401538461538461.
+Testing model 23 of 72
+Potential greedy soup val acc 0.8377307692307693, best so far 0.8401538461538461.
+Testing model 24 of 72
+Potential greedy soup val acc 0.8375384615384616, best so far 0.8401538461538461.
+Testing model 25 of 72
+Potential greedy soup val acc 0.8345, best so far 0.8401538461538461.
+Testing model 26 of 72
+Potential greedy soup val acc 0.8399615384615384, best so far 0.8401538461538461.
+Testing model 27 of 72
+Potential greedy soup val acc 0.8381153846153846, best so far 0.8401538461538461.
+Testing model 28 of 72
+Potential greedy soup val acc 0.8376923076923077, best so far 0.8401538461538461.
+Testing model 29 of 72
+Potential greedy soup val acc 0.8375, best so far 0.8401538461538461.
+Testing model 30 of 72
+Potential greedy soup val acc 0.8370384615384615, best so far 0.8401538461538461.
+Testing model 31 of 72
+Potential greedy soup val acc 0.8389615384615384, best so far 0.8401538461538461.
+Testing model 32 of 72
+Potential greedy soup val acc 0.838, best so far 0.8401538461538461.
+Testing model 33 of 72
+Potential greedy soup val acc 0.8397307692307693, best so far 0.8401538461538461.
+Testing model 34 of 72
+Potential greedy soup val acc 0.8355, best so far 0.8401538461538461.
+Testing model 35 of 72
+Potential greedy soup val acc 0.8382692307692308, best so far 0.8401538461538461.
+Testing model 36 of 72
+Potential greedy soup val acc 0.8373461538461539, best so far 0.8401538461538461.
+Testing model 37 of 72
+Potential greedy soup val acc 0.8388846153846153, best so far 0.8401538461538461.
+Testing model 38 of 72
+Potential greedy soup val acc 0.8373461538461539, best so far 0.8401538461538461.
+Testing model 39 of 72
+Potential greedy soup val acc 0.8376538461538462, best so far 0.8401538461538461.
+Testing model 40 of 72
+Potential greedy soup val acc 0.8382307692307692, best so far 0.8401538461538461.
+Testing model 41 of 72
+Potential greedy soup val acc 0.8370384615384615, best so far 0.8401538461538461.
+Testing model 42 of 72
+Potential greedy soup val acc 0.8368846153846153, best so far 0.8401538461538461.
+Testing model 43 of 72
+Potential greedy soup val acc 0.8386153846153847, best so far 0.8401538461538461.
+Testing model 44 of 72
+Potential greedy soup val acc 0.8378076923076923, best so far 0.8401538461538461.
+Testing model 45 of 72
+Potential greedy soup val acc 0.8368846153846153, best so far 0.8401538461538461.
+Testing model 46 of 72
+Potential greedy soup val acc 0.8392307692307692, best so far 0.8401538461538461.
+Testing model 47 of 72
+Potential greedy soup val acc 0.8373076923076923, best so far 0.8401538461538461.
+Testing model 48 of 72
+Potential greedy soup val acc 0.8390384615384615, best so far 0.8401538461538461.
+Testing model 49 of 72
+Potential greedy soup val acc 0.8383076923076923, best so far 0.8401538461538461.
+Testing model 50 of 72
+Potential greedy soup val acc 0.8369615384615384, best so far 0.8401538461538461.
+Testing model 51 of 72
+Potential greedy soup val acc 0.8365769230769231, best so far 0.8401538461538461.
+Testing model 52 of 72
+Potential greedy soup val acc 0.8396923076923077, best so far 0.8401538461538461.
+Testing model 53 of 72
+Potential greedy soup val acc 0.8379615384615384, best so far 0.8401538461538461.
+Testing model 54 of 72
+Potential greedy soup val acc 0.8368461538461538, best so far 0.8401538461538461.
+Testing model 55 of 72
+Potential greedy soup val acc 0.8365, best so far 0.8401538461538461.
+Testing model 56 of 72
+Potential greedy soup val acc 0.834076923076923, best so far 0.8401538461538461.
+Testing model 57 of 72
+Potential greedy soup val acc 0.838076923076923, best so far 0.8401538461538461.
+Testing model 58 of 72
+Potential greedy soup val acc 0.8242692307692308, best so far 0.8401538461538461.
+Testing model 59 of 72
+Potential greedy soup val acc 0.8395769230769231, best so far 0.8401538461538461.
+Testing model 60 of 72
+Potential greedy soup val acc 0.8367307692307693, best so far 0.8401538461538461.
+Testing model 61 of 72
+Potential greedy soup val acc 0.8365769230769231, best so far 0.8401538461538461.
+Testing model 62 of 72
+Potential greedy soup val acc 0.8366153846153846, best so far 0.8401538461538461.
+Testing model 63 of 72
+Potential greedy soup val acc 0.8378461538461538, best so far 0.8401538461538461.
+Testing model 64 of 72
+Potential greedy soup val acc 0.837076923076923, best so far 0.8401538461538461.
+Testing model 65 of 72
+Potential greedy soup val acc 0.8373461538461539, best so far 0.8401538461538461.
+Testing model 66 of 72
+Potential greedy soup val acc 0.8365769230769231, best so far 0.8401538461538461.
+Testing model 67 of 72
+Potential greedy soup val acc 0.8369615384615384, best so far 0.8401538461538461.
+Testing model 68 of 72
+Potential greedy soup val acc 0.8366538461538462, best so far 0.8401538461538461.
+Testing model 69 of 72
+Potential greedy soup val acc 0.8366538461538462, best so far 0.8401538461538461.
+Testing model 70 of 72
+Potential greedy soup val acc 0.8356923076923077, best so far 0.8401538461538461.
+Testing model 71 of 72
+Potential greedy soup val acc 0.8366153846153846, best so far 0.8401538461538461.
+
+Final soup: ['model_43', 'model_44', 'model_32', 'model_47', 'model_50']
+
+Evaluating on ImageNet2p.
+0.8401538461538461
+Evaluating on ImageNet.
+0.81016
+Evaluating on ImageNetV2.
+0.6955
+Evaluating on ImageNetSketch.
+0.4776670793295211
+Evaluating on ImageNetR.
+0.6428
+Evaluating on ImageNetA.
+0.2790666666666667

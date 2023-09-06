@@ -1,0 +1,265 @@
+# The default configuration for my 'ManifoldMixMS' algorithm
+# Note you can specifiy a config file with a _different_ name via the "--config-name" command line parameter,
+# see https://stackoverflow.com/questions/62664386/how-to-pass-a-hydra-config-via-command-line
+#
+# ( ) Some global stuff
+#
+
+# Whether phase 1 shall be done, or not.
+# If phase 1 is skipped, then in phase 2 the serialized information (in the .json file) for phase 1 is used
+# Default: true
+do_phase1: true
+
+# Whether phase 2 shall be done, or not
+# If phase 2 is skipped, then the initial fused model gotten from phase 1 is not further optimized.
+# Default: True
+do_phase2: false
+
+#
+# ( ) Parameters related to model architecture which is used etc.
+#
+
+model:
+  # Defines the 'base model' architecture which is used in the experiments
+  # Curently, we support _only_ the 'ViT-B/32' model
+  # Possible values
+  # - 'ViT-B/32': The 'ViT-B/32' from CLIP python package
+  # Default: 'ViT-B/32's
+  base_model : 'ViT-B/32'
+
+  # The root dir for the (72) individual models which are taken as potential 'ingredients' for the soup
+  # IMPORTANT: The specified directory must be _relative_ (not absolute) to the application directory.
+  # Default: './models'
+  ingredients_root: './models'
+
+#
+# ( ) Parameters related to calculation of the validation accuracy ('ValAcc') of a model
+#     Note that 'ValAcc' is the key metric used during optimization - in both phases
+#
+
+valacc:
+
+  # The dataset (split) on which validation accuracy is calculated.
+  # It corresponds typically to the 'validation' split.
+  # Possible values:
+  # - 'ImageNet2p': Two percent of the training dataset of ImageNet. We use this as held-out-validation dataset,
+  #   because the 'official' validation split of ImageNet dataset is typically used as 'test' dataset.
+  #   See model soup paper, end of section 3.1
+  # Default: 'ImageNet2p'
+  dataset: 'ImageNet2p'
+
+  # The batch size used during calculation of 'ValAcc'
+  # Default: 256
+  batch_size: 256
+
+  # The number of worker used during calculation of 'ValAcc'
+  # Setting it to zero makes debugging easier as it means that no multiprocessing is involved.
+  # Default: 8
+  num_workers: 8
+
+#
+# ( ) Parameters related to the employed datasets
+#
+
+datasets:
+
+  # The root director for all downloaded datasets (ImageNet, ...)
+  # IMPORTANT: The specified directory must be _relative_ (not absolute) to the application directory.
+  # Default: '../manifoldmixms_datasets'
+  rootdir: '../manifoldmixms_datasets'
+
+#
+# ( ) Parameters related to 'phase 1' ('sequential phase')
+#  In phase 1 we are looping sequentially over all ingredient models and picking the proper ingredients
+#  It does also a sequential optimization over the component-mixing vector(s) 'lambda'
+#  and calculates from them already an 'initial' version of the 'fused' model
+#
+
+phase1:
+
+  # How much of the (best-performing - for candidate_mode == 0) ingredient models are to be inspected in phase 1.
+  # Must be a value >= 1. Set to a high value (e.g. 1000) in order to fetch always all ingredient models.
+  # Default: 1000
+  number_models_to_inspect: 1000
+
+  # Defines the mode (order etc.) how the 'candidate models' for the soup are inspected
+  # Possible values:
+  # 0 ... Always take model with highest valacc as first ingredient.
+  #       Inspect other candidates in decreasing valacc oder (so from second-best model to worst one)
+  # 1 ... Always take model with highest valacc as first ingredient.
+  #       Inspect other candidates in increasing valacc oder (so from worst one to second-best)
+  # 2 ... Always take model with highest valacc as first ingredient.[NOT IMPLEMENTED YET]
+  #       Inspect other candidates in random order.
+  # 3 ... Always take one model with a random index as first ingredient. [NOT IMPLEMENTED YET]
+  #       Inspect other candidates in decreasing valacc oder (so from second-best model to worst one)
+  # 4 ... Always take one model with a random index as first ingredient. [NOT IMPLEMENTED YET]
+  #       Inspect other candidates in increasing valacc oder (so from worst one to second-best)
+  # 5 ... Always take one model with a random index as first ingredient.
+  #       Inspect other candidates in random order.
+  # Default: 0
+  candidate_mode: 0
+
+  # Defines the 'granularity' of the model components, meaning how coarse the grouping of the model layers shall be.
+  # A smaller value means a more coarse (higher-level) grouping.
+  # A granularity of '0' means that there is only one component - the whole model
+  # A granularity of '1000' means that _every_ layer of the model is a component.
+  # The actual grouping depends on the model architecture.
+  # For the 'ViT-B/32' model: level = 0 -> 2 components, level = 1-> 8 components, level = 2 -> 15 components, level = 3 -> 26 components
+  # Note that for now, the component granularity must be the same in both phases.
+  # Default: 3
+  component_granularity: 1
+
+  # In order to speedup the phase 1, we skip the optimization step for a candidate C for which
+  # there is likely no chance to increase the validation accuracy by a convex combination of A and C.
+  # This is done be calculating the Validation Accuracy of the convex combination of A and C with the start value for lambda.
+  # If this validation accuracy is less than <tau * ValAcc(A)>, then we skip the whole computation and simply discard candidate C.
+  # The constant <tau> is set a value in range [0.99 1.0], with default value 0.996.
+  # Note when you set ‘tau’ to 1.0, then we are picking roughly the same ingredient models as ‘greedy soup.
+  # Default: 0.998
+  tau: 0.998
+
+  # If this switch is enabled, then we do a second (and potentially also third) soptimizer pass
+  # _if_ our first optimizer pass was successful (so we got a better accuracy than currently)
+  # Default: true
+  do_potential_second_optimizer_pass: true
+
+  # In order to speedup the phase, we do a subsampling of the candidate ingredients C in the following way:
+  # - In the first segment of size '1 * segment_size', every candidate C is inspected
+  # - In the first segment of size '2 * segment_size', every second candidate C is inspected
+  # - In the first segment of size '3 * segment_size', every third candidate C is inspected
+  # - etc. etc.
+  # Note that for each inspected candidate, the short-curcuit test (see 'tau' config var) is still done, of course.
+  # Default: 1000
+  segment_size: 1000
+
+  # The name of the result file (note extension '.json' is automatically appended)
+  # which saves the results of phase 1.
+  # Note you can add also a _relative_ path, as prefix.
+  result_filename: 'phase1_results'
+
+  # Parameters for the nevergrad optimizer
+  optimizer:
+    # The bounds used for the variables to be optimized.
+    # Must be a value in range [0 1]
+    # This value is mapped in a proper way to the respective bounds for 'lambda' (see code)
+    # Default: 0.5
+    bounds_delta: 0.5
+
+    # Maximum function evaluations allowed per dimension (of the optimization problem to be solved).
+    # Each dimension maps to one 'component' (can be a building block, a group of layers or a single layer) of the model.
+    # E.g. with 30 components and 10 func evals per dim, 10 * 30 = 300 functions evaluations are allowed at most.
+    # Note setting it to zero has a special meaning: It means that exactly one function evaluation is done.
+    # Note that Nevergrad automatically choses the right optimizer, based on this setting and others.
+    # Default: 10
+    max_func_evals_per_dim: 30
+
+    # Verbosity level for the nevergrad optimizer
+    # Can be 0, 1 or 2
+    # Default: 0
+    verbosity: 0
+
+    # The seed for the random number generator (used in nevergrad) in each call of the optimizer
+    # Default: 123456789
+    random_seed: 123456789
+
+#
+# ( ) Parameters related to 'phase2' (final pass)
+# Phase 2 optimizes the component-mixing vector(s) 'myu' for the ingredients chosen in phase 1
+# and calculate the 'fused' model as a mix of those
+#
+
+phase2:
+
+  # If 'do_phase1' is set to 'false', then we load the phase 1 results from this file
+  # Note the #.json' extension is added.
+  # Note you can add also a _relative_ path, as prefix.
+  # Default: 'phase1_results'
+  phase1_result_filename: './saved_results/complete_runs_phase1/phase1_run_01/phase1_results'
+
+  # Defines the 'granularity' of the model components, meaning how coarse the grouping of the model layers shall be.
+  # A smaller value means a more coarse (higher-level) grouping.
+  # A granularity of '0' means that there is only one component - the whole model
+  # A granularity of '1000' means that _every_ layer of the model is a component.
+  # The actual grouping depends on the model architecture.
+  # For the 'ViT-B/32' model: level = 0 -> 2 components, level = 1-> 8 components, level = 2 -> 15 components, level = 3 -> 26 components
+  # Note that for now, the component granularity must be the same in both phases.
+  # Default: 3
+  component_granularity: 3
+
+  # Whether we enforce a convex combination (summing up to 1) or not
+  # Default: true
+  enforce_convex_combination: true
+
+  # The name of the result file (note extension '.jsonl' is automatically append
+  # which saves the results of phase 1.
+  # Note you can add also a _relative_ path, as prefix.
+  result_filename: 'phase2_results'
+
+  # Parameters for the nevergrad optimizer
+  optimizer:
+    # The bounds used for the 'myu' variables to be optimized.
+    # Should be a range around the value '1'.
+    # Default: [0.75, 1.25]
+    bounds: [ 0.75, 1.25 ]
+
+    # Maximum function evaluations allowed per dimension (of the optimization problem to be solved).
+    # Each dimension maps to one 'component' (can be a building block, a group of layers or a single layer) of the model.
+    # Note setting it to zero has a special meaning: It means that exactly one function evaluation is done.
+    # Note that Nevergrad automatically choses the right optimizer, based on this setting and others.
+    # Default: 10
+    max_func_evals_per_dim: 10
+
+    # Verbosity level for the nevergrad optimizer
+    # Can be 0, 1 or 2
+    # Default: 0
+    verbosity: 0
+
+    # The seed for the random number generator (used in nevergrad) in each call of the optimizer
+    # Default: 123456789
+    random_seed: 123456789
+
+
+#
+# ( ) Parameters related to the final evaluation of the 'fused' model calculated in phase 2
+#
+
+final:
+
+  xyz = 123
+
+#
+# ( ) 'hydra' framework (for config, logger, runs etc.) related config parameters
+#     See https://hydra.cc/docs/1.2/configure_hydra/intro/
+#
+
+hydra:
+  job:
+    # We explicitly state that hydra shall change the current working directory _also_ for Hydra versions >= 1.2
+    # So we keep the 'old' hydra behaviour (because it's useful)
+    # See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/
+    chdir: True
+  # See https://hydra.cc/docs/configure_hydra/workdir/
+  run:
+    dir: runs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  # See https://hydra.cc/docs/configure_hydra/workdir/
+  sweep:
+    dir: multiruns/${now:%Y-%m-%d_%H-%M-%S}
+    # FAH: We format the job number so that it has always 3 digits, by using a custom resolver (defined in 'main.py')
+    # see https://github.com/facebookresearch/hydra/issues/1795
+    subdir: ${jrs_format_three_digits:${hydra.job.num}}
+  # See https://hydra.cc/docs/configure_hydra/logging/
+  job_logging:
+    formatters:
+      simple:
+        # We use a somewhat simpler format than the default one
+        # See https://hydra.cc/docs/configure_hydra/logging/
+        # and https://stackoverflow.com/questions/3220284/how-to-customize-the-time-format-for-python-logging
+        # and https://docs.python.org/3/howto/logging.html
+        format: '[%(asctime)s][%(levelname)s] %(message)s'
+        # 'datefmt' formats the 'asctime' variable (current date and time)
+        datefmt: '%Y-%m-%d %H:%M:%S'
+    handlers:
+      console:
+        formatter: simple
+
+

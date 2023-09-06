@@ -1,0 +1,432 @@
+[2023-03-21 08:26:30][INFO] Original work dir (= manifoldmixms root dir): /home/fah/project/common/avm_projects/AI4Media/work/WP3/manifold/manifoldmixms
+[2023-03-21 08:26:30][INFO] Current work dir (= run dir): /home/fah/project/common/avm_projects/AI4Media/work/WP3/manifold/manifoldmixms/runs/2023-03-21/08-26-29
+[2023-03-21 08:26:30][INFO] Loading base model: ViT-B/32
+[2023-03-21 08:26:32][INFO] Creating dataset: ImageNet2p
+[2023-03-21 08:26:35][INFO] Creating dataset: ImageNet
+[2023-03-21 08:26:37][INFO] Creating dataset: ImageNetV2
+[2023-03-21 08:26:40][INFO] Creating dataset: ImageNetSketch
+[2023-03-21 08:26:41][INFO] Creating dataset: ImageNetR
+[2023-03-21 08:26:41][INFO] Creating dataset: ObjectNet
+[2023-03-21 08:26:41][INFO] Creating dataset: ImageNetA
+[2023-03-21 08:26:41][INFO] Validation dataset: ImageNet2p
+[2023-03-21 08:26:41][INFO] Sorting ingredient models by valAcc in decreasing order ...
+[2023-03-21 08:26:41][INFO] Sorted ingredients: ['model_43', 'model_44', 'model_69', 'model_48', 'model_63', 'model_27', 'model_34', 'model_60', 'model_54', 'model_70', 'model_32', 'model_57', 'model_24', 'model_46', 'model_42', 'model_49', 'model_47', 'model_50', 'model_45', 'model_3', 'model_9', 'model_59', 'model_56', 'model_6', 'model_17', 'model_26', 'model_10', 'model_25', 'model_19', 'model_51', 'model_40', 'model_21', 'model_36', 'model_30', 'model_53', 'model_13', 'model_29', 'model_58', 'model_67', 'model_61', 'model_52', 'model_22', 'model_38', 'model_62', 'model_11', 'model_7', 'model_8', 'model_28', 'model_15', 'model_20', 'model_12', 'model_1', 'model_66', 'model_37', 'model_68', 'model_33', 'model_14', 'model_64', 'model_2', 'model_55', 'model_35', 'model_23', 'model_65', 'model_16', 'model_41', 'model_18', 'model_71', 'model_39', 'model_5', 'model_4', 'model_31', 'model_0']
+[2023-03-21 08:26:41][INFO] Ingredients valacc: ['0.830500', '0.829000', '0.824731', '0.824077', '0.823500', '0.822846', '0.822269', '0.822231', '0.821769', '0.821654', '0.821577', '0.821346', '0.818269', '0.816808', '0.815385', '0.815231', '0.814654', '0.813962', '0.813885', '0.813731', '0.813692', '0.813538', '0.812769', '0.811577', '0.811462', '0.810538', '0.810038', '0.809423', '0.809385', '0.809346', '0.809154', '0.808885', '0.808808', '0.808500', '0.807654', '0.807385', '0.806962', '0.806423', '0.806346', '0.805115', '0.804962', '0.803385', '0.803346', '0.802192', '0.801846', '0.801538', '0.801462', '0.801346', '0.799692', '0.799154', '0.798885', '0.798462', '0.797885', '0.796346', '0.796115', '0.795962', '0.795308', '0.794462', '0.794269', '0.793500', '0.792346', '0.792154', '0.791923', '0.791885', '0.790731', '0.790538', '0.789846', '0.787423', '0.785269', '0.785269', '0.781308', '0.780808']
+[2023-03-21 08:26:41][INFO] ---------------------------
+[2023-03-21 08:26:41][INFO] Starting phase 1 ...
+[2023-03-21 08:26:42][INFO] Checking the ingredient models ...
+[2023-03-21 08:27:12][INFO] Adding ingredient with index 0 and ValAcc 0.830462
+[2023-03-21 08:27:12][INFO] Number of (best-performing) models to inspect: 72
+[2023-03-21 08:27:12][INFO] ValAcc(A): 0.830462
+[2023-03-21 08:27:12][INFO] Investigating whether candidate C with index 1 and ValAcc 0.829000 should be added ...
+[2023-03-21 08:27:38][INFO] ValAcc(approxAvg(A, C)): 0.836269
+[2023-03-21 08:27:38][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 10:12:26][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836500
+[2023-03-21 10:12:26][INFO] Doing second optimizer pass
+[2023-03-21 10:12:26][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 11:57:14][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836615
+[2023-03-21 11:57:14][INFO] Adding ingredient model with index 1 to soup
+[2023-03-21 11:57:15][INFO] Current ingredients: [0, 1]
+[2023-03-21 11:57:15][INFO] ValAcc(A): 0.836615
+[2023-03-21 11:57:15][INFO] Investigating whether candidate C with index 2 and ValAcc 0.824731 should be added ...
+[2023-03-21 11:57:41][INFO] ValAcc(approxAvg(A, C)): 0.835308
+[2023-03-21 11:57:41][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 13:42:30][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836462
+[2023-03-21 13:42:30][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-21 13:42:56][INFO] ValAcc(avgModelNearMisses): 0.825154
+[2023-03-21 13:43:22][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.835308
+[2023-03-21 13:43:22][INFO] ValAcc(A): 0.836615
+[2023-03-21 13:43:22][INFO] Investigating whether candidate C with index 3 and ValAcc 0.824077 should be added ...
+[2023-03-21 13:43:49][INFO] ValAcc(approxAvg(A, C)): 0.834923
+[2023-03-21 13:43:49][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-21 13:43:49][INFO] ValAcc(A): 0.836615
+[2023-03-21 13:43:49][INFO] Investigating whether candidate C with index 4 and ValAcc 0.823500 should be added ...
+[2023-03-21 13:44:16][INFO] ValAcc(approxAvg(A, C)): 0.835500
+[2023-03-21 13:44:16][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 15:28:43][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.837000
+[2023-03-21 15:28:43][INFO] Doing second optimizer pass
+[2023-03-21 15:28:43][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 17:13:12][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.837038
+[2023-03-21 17:13:12][INFO] Adding ingredient model with index 4 to soup
+[2023-03-21 17:13:12][INFO] Current ingredients: [0, 1, 4]
+[2023-03-21 17:13:12][INFO] ValAcc(A): 0.837038
+[2023-03-21 17:13:12][INFO] Investigating whether candidate C with index 5 and ValAcc 0.822846 should be added ...
+[2023-03-21 17:13:38][INFO] ValAcc(approxAvg(A, C)): 0.835038
+[2023-03-21 17:13:38][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-21 17:13:38][INFO] ValAcc(A): 0.837038
+[2023-03-21 17:13:38][INFO] Investigating whether candidate C with index 6 and ValAcc 0.822269 should be added ...
+[2023-03-21 17:14:04][INFO] ValAcc(approxAvg(A, C)): 0.835038
+[2023-03-21 17:14:04][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-21 17:14:04][INFO] ValAcc(A): 0.837038
+[2023-03-21 17:14:04][INFO] Investigating whether candidate C with index 7 and ValAcc 0.822231 should be added ...
+[2023-03-21 17:14:31][INFO] ValAcc(approxAvg(A, C)): 0.835385
+[2023-03-21 17:14:31][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 18:59:13][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836346
+[2023-03-21 18:59:13][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-21 18:59:39][INFO] ValAcc(avgModelNearMisses): 0.826769
+[2023-03-21 19:00:06][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.835577
+[2023-03-21 19:00:06][INFO] ValAcc(A): 0.837038
+[2023-03-21 19:00:06][INFO] Investigating whether candidate C with index 8 and ValAcc 0.821769 should be added ...
+[2023-03-21 19:00:32][INFO] ValAcc(approxAvg(A, C)): 0.835500
+[2023-03-21 19:00:32][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 20:45:26][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836423
+[2023-03-21 20:45:26][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-21 20:45:52][INFO] ValAcc(avgModelNearMisses): 0.829692
+[2023-03-21 20:46:18][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.836115
+[2023-03-21 20:46:18][INFO] ValAcc(A): 0.837038
+[2023-03-21 20:46:18][INFO] Investigating whether candidate C with index 9 and ValAcc 0.821654 should be added ...
+[2023-03-21 20:46:44][INFO] ValAcc(approxAvg(A, C)): 0.834538
+[2023-03-21 20:46:44][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-21 20:46:44][INFO] ValAcc(A): 0.837038
+[2023-03-21 20:46:44][INFO] Investigating whether candidate C with index 10 and ValAcc 0.821577 should be added ...
+[2023-03-21 20:47:11][INFO] ValAcc(approxAvg(A, C)): 0.837038
+[2023-03-21 20:47:11][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-21 22:32:15][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.837846
+[2023-03-21 22:32:15][INFO] Doing second optimizer pass
+[2023-03-21 22:32:15][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 00:17:22][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838000
+[2023-03-22 00:17:22][INFO] Adding ingredient model with index 10 to soup
+[2023-03-22 00:17:23][INFO] Current ingredients: [0, 1, 4, 10]
+[2023-03-22 00:17:23][INFO] ValAcc(A): 0.838000
+[2023-03-22 00:17:23][INFO] Investigating whether candidate C with index 11 and ValAcc 0.821346 should be added ...
+[2023-03-22 00:17:49][INFO] ValAcc(approxAvg(A, C)): 0.836769
+[2023-03-22 00:17:49][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 02:03:00][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.837808
+[2023-03-22 02:03:00][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 02:03:26][INFO] ValAcc(avgModelNearMisses): 0.829846
+[2023-03-22 02:03:52][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.837154
+[2023-03-22 02:03:52][INFO] ValAcc(A): 0.838000
+[2023-03-22 02:03:52][INFO] Investigating whether candidate C with index 12 and ValAcc 0.818269 should be added ...
+[2023-03-22 02:04:19][INFO] ValAcc(approxAvg(A, C)): 0.836769
+[2023-03-22 02:04:19][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 03:49:05][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.837615
+[2023-03-22 03:49:05][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 03:49:31][INFO] ValAcc(avgModelNearMisses): 0.831038
+[2023-03-22 03:49:57][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.836923
+[2023-03-22 03:49:57][INFO] ValAcc(A): 0.838000
+[2023-03-22 03:49:57][INFO] Investigating whether candidate C with index 13 and ValAcc 0.816808 should be added ...
+[2023-03-22 03:50:23][INFO] ValAcc(approxAvg(A, C)): 0.836154
+[2023-03-22 03:50:23][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 03:50:23][INFO] ValAcc(A): 0.838000
+[2023-03-22 03:50:23][INFO] Investigating whether candidate C with index 14 and ValAcc 0.815385 should be added ...
+[2023-03-22 03:50:50][INFO] ValAcc(approxAvg(A, C)): 0.836577
+[2023-03-22 03:50:50][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 05:35:50][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.836654
+[2023-03-22 05:35:50][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 05:36:16][INFO] ValAcc(avgModelNearMisses): 0.830885
+[2023-03-22 05:36:42][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.837115
+[2023-03-22 05:36:42][INFO] ValAcc(A): 0.838000
+[2023-03-22 05:36:42][INFO] Investigating whether candidate C with index 15 and ValAcc 0.815231 should be added ...
+[2023-03-22 05:37:09][INFO] ValAcc(approxAvg(A, C)): 0.835115
+[2023-03-22 05:37:09][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 05:37:09][INFO] ValAcc(A): 0.838000
+[2023-03-22 05:37:09][INFO] Investigating whether candidate C with index 16 and ValAcc 0.814654 should be added ...
+[2023-03-22 05:37:35][INFO] ValAcc(approxAvg(A, C)): 0.837885
+[2023-03-22 05:37:35][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 07:22:41][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838269
+[2023-03-22 07:22:41][INFO] Doing second optimizer pass
+[2023-03-22 07:22:41][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 09:07:45][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838269
+[2023-03-22 09:07:45][INFO] Adding ingredient model with index 16 to soup
+[2023-03-22 09:07:45][INFO] Current ingredients: [0, 1, 4, 10, 16]
+[2023-03-22 09:07:45][INFO] ValAcc(A): 0.838269
+[2023-03-22 09:07:45][INFO] Investigating whether candidate C with index 17 and ValAcc 0.813962 should be added ...
+[2023-03-22 09:08:12][INFO] ValAcc(approxAvg(A, C)): 0.838538
+[2023-03-22 09:08:12][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 10:54:22][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839115
+[2023-03-22 10:54:22][INFO] Doing second optimizer pass
+[2023-03-22 10:54:22][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 12:40:56][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839346
+[2023-03-22 12:40:56][INFO] Adding ingredient model with index 17 to soup
+[2023-03-22 12:40:56][INFO] Current ingredients: [0, 1, 4, 10, 16, 17]
+[2023-03-22 12:40:56][INFO] ValAcc(A): 0.839346
+[2023-03-22 12:40:56][INFO] Investigating whether candidate C with index 18 and ValAcc 0.813885 should be added ...
+[2023-03-22 12:41:23][INFO] ValAcc(approxAvg(A, C)): 0.838423
+[2023-03-22 12:41:23][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 14:29:50][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838962
+[2023-03-22 14:29:50][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 14:30:18][INFO] ValAcc(avgModelNearMisses): 0.832923
+[2023-03-22 14:30:45][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839115
+[2023-03-22 14:30:45][INFO] ValAcc(A): 0.839346
+[2023-03-22 14:30:45][INFO] Investigating whether candidate C with index 19 and ValAcc 0.813731 should be added ...
+[2023-03-22 14:31:13][INFO] ValAcc(approxAvg(A, C)): 0.837269
+[2023-03-22 14:31:13][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 14:31:13][INFO] ValAcc(A): 0.839346
+[2023-03-22 14:31:13][INFO] Investigating whether candidate C with index 20 and ValAcc 0.813692 should be added ...
+[2023-03-22 14:31:41][INFO] ValAcc(approxAvg(A, C)): 0.837269
+[2023-03-22 14:31:41][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 14:31:41][INFO] ValAcc(A): 0.839346
+[2023-03-22 14:31:41][INFO] Investigating whether candidate C with index 21 and ValAcc 0.813538 should be added ...
+[2023-03-22 14:32:08][INFO] ValAcc(approxAvg(A, C)): 0.838077
+[2023-03-22 14:32:08][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 16:19:35][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838538
+[2023-03-22 16:19:35][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 16:20:01][INFO] ValAcc(avgModelNearMisses): 0.835077
+[2023-03-22 16:20:28][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838885
+[2023-03-22 16:20:28][INFO] ValAcc(A): 0.839346
+[2023-03-22 16:20:28][INFO] Investigating whether candidate C with index 22 and ValAcc 0.812769 should be added ...
+[2023-03-22 16:20:54][INFO] ValAcc(approxAvg(A, C)): 0.838192
+[2023-03-22 16:20:54][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 18:07:24][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838423
+[2023-03-22 18:07:24][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 18:07:51][INFO] ValAcc(avgModelNearMisses): 0.834923
+[2023-03-22 18:08:17][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839038
+[2023-03-22 18:08:17][INFO] ValAcc(A): 0.839346
+[2023-03-22 18:08:17][INFO] Investigating whether candidate C with index 23 and ValAcc 0.811577 should be added ...
+[2023-03-22 18:08:44][INFO] ValAcc(approxAvg(A, C)): 0.837615
+[2023-03-22 18:08:44][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 18:08:44][INFO] ValAcc(A): 0.839346
+[2023-03-22 18:08:44][INFO] Investigating whether candidate C with index 24 and ValAcc 0.811462 should be added ...
+[2023-03-22 18:09:11][INFO] ValAcc(approxAvg(A, C)): 0.838077
+[2023-03-22 18:09:11][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 19:55:48][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838231
+[2023-03-22 19:55:48][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 19:56:14][INFO] ValAcc(avgModelNearMisses): 0.834577
+[2023-03-22 19:56:41][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838808
+[2023-03-22 19:56:41][INFO] ValAcc(A): 0.839346
+[2023-03-22 19:56:41][INFO] Investigating whether candidate C with index 25 and ValAcc 0.810538 should be added ...
+[2023-03-22 19:57:08][INFO] ValAcc(approxAvg(A, C)): 0.834423
+[2023-03-22 19:57:08][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 19:57:08][INFO] ValAcc(A): 0.839346
+[2023-03-22 19:57:08][INFO] Investigating whether candidate C with index 26 and ValAcc 0.810038 should be added ...
+[2023-03-22 19:57:35][INFO] ValAcc(approxAvg(A, C)): 0.838346
+[2023-03-22 19:57:35][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 21:44:20][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838885
+[2023-03-22 21:44:20][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 21:44:46][INFO] ValAcc(avgModelNearMisses): 0.834308
+[2023-03-22 21:45:13][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838885
+[2023-03-22 21:45:13][INFO] ValAcc(A): 0.839346
+[2023-03-22 21:45:13][INFO] Investigating whether candidate C with index 27 and ValAcc 0.809423 should be added ...
+[2023-03-22 21:45:39][INFO] ValAcc(approxAvg(A, C)): 0.837038
+[2023-03-22 21:45:39][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 21:45:39][INFO] ValAcc(A): 0.839346
+[2023-03-22 21:45:39][INFO] Investigating whether candidate C with index 28 and ValAcc 0.809385 should be added ...
+[2023-03-22 21:46:06][INFO] ValAcc(approxAvg(A, C)): 0.837231
+[2023-03-22 21:46:06][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 21:46:06][INFO] ValAcc(A): 0.839346
+[2023-03-22 21:46:06][INFO] Investigating whether candidate C with index 29 and ValAcc 0.809346 should be added ...
+[2023-03-22 21:46:33][INFO] ValAcc(approxAvg(A, C)): 0.837615
+[2023-03-22 21:46:33][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 21:46:33][INFO] ValAcc(A): 0.839346
+[2023-03-22 21:46:33][INFO] Investigating whether candidate C with index 30 and ValAcc 0.809154 should be added ...
+[2023-03-22 21:47:00][INFO] ValAcc(approxAvg(A, C)): 0.837038
+[2023-03-22 21:47:00][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-22 21:47:00][INFO] ValAcc(A): 0.839346
+[2023-03-22 21:47:00][INFO] Investigating whether candidate C with index 31 and ValAcc 0.808885 should be added ...
+[2023-03-22 21:47:27][INFO] ValAcc(approxAvg(A, C)): 0.837731
+[2023-03-22 21:47:27][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-22 23:33:51][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838692
+[2023-03-22 23:33:51][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-22 23:34:18][INFO] ValAcc(avgModelNearMisses): 0.833500
+[2023-03-22 23:34:45][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838923
+[2023-03-22 23:34:45][INFO] ValAcc(A): 0.839346
+[2023-03-22 23:34:45][INFO] Investigating whether candidate C with index 32 and ValAcc 0.808808 should be added ...
+[2023-03-22 23:35:11][INFO] ValAcc(approxAvg(A, C)): 0.837885
+[2023-03-22 23:35:11][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 01:21:37][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838423
+[2023-03-23 01:21:37][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 01:22:03][INFO] ValAcc(avgModelNearMisses): 0.833000
+[2023-03-23 01:22:30][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838962
+[2023-03-23 01:22:30][INFO] ValAcc(A): 0.839346
+[2023-03-23 01:22:30][INFO] Investigating whether candidate C with index 33 and ValAcc 0.808500 should be added ...
+[2023-03-23 01:22:56][INFO] ValAcc(approxAvg(A, C)): 0.839423
+[2023-03-23 01:22:56][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 03:09:05][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839731
+[2023-03-23 03:09:05][INFO] Doing second optimizer pass
+[2023-03-23 03:09:05][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 04:55:15][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839731
+[2023-03-23 04:55:15][INFO] Adding ingredient model with index 33 to soup
+[2023-03-23 04:55:15][INFO] Current ingredients: [0, 1, 4, 10, 16, 17, 33]
+[2023-03-23 04:55:15][INFO] ValAcc(A): 0.839731
+[2023-03-23 04:55:15][INFO] Investigating whether candidate C with index 34 and ValAcc 0.807654 should be added ...
+[2023-03-23 04:55:42][INFO] ValAcc(approxAvg(A, C)): 0.836154
+[2023-03-23 04:55:42][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 04:55:42][INFO] ValAcc(A): 0.839731
+[2023-03-23 04:55:42][INFO] Investigating whether candidate C with index 35 and ValAcc 0.807385 should be added ...
+[2023-03-23 04:56:09][INFO] ValAcc(approxAvg(A, C)): 0.838308
+[2023-03-23 04:56:09][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 06:42:38][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839154
+[2023-03-23 06:42:38][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 06:43:04][INFO] ValAcc(avgModelNearMisses): 0.831500
+[2023-03-23 06:43:31][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838885
+[2023-03-23 06:43:31][INFO] ValAcc(A): 0.839731
+[2023-03-23 06:43:31][INFO] Investigating whether candidate C with index 36 and ValAcc 0.806962 should be added ...
+[2023-03-23 06:43:58][INFO] ValAcc(approxAvg(A, C)): 0.837308
+[2023-03-23 06:43:58][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 06:43:58][INFO] ValAcc(A): 0.839731
+[2023-03-23 06:43:58][INFO] Investigating whether candidate C with index 37 and ValAcc 0.806423 should be added ...
+[2023-03-23 06:44:24][INFO] ValAcc(approxAvg(A, C)): 0.838846
+[2023-03-23 06:44:24][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 08:30:40][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838885
+[2023-03-23 08:30:40][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 08:31:06][INFO] ValAcc(avgModelNearMisses): 0.832731
+[2023-03-23 08:31:33][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839000
+[2023-03-23 08:31:33][INFO] ValAcc(A): 0.839731
+[2023-03-23 08:31:33][INFO] Investigating whether candidate C with index 38 and ValAcc 0.806346 should be added ...
+[2023-03-23 08:32:00][INFO] ValAcc(approxAvg(A, C)): 0.837423
+[2023-03-23 08:32:00][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 08:32:00][INFO] ValAcc(A): 0.839731
+[2023-03-23 08:32:00][INFO] Investigating whether candidate C with index 39 and ValAcc 0.805115 should be added ...
+[2023-03-23 08:32:27][INFO] ValAcc(approxAvg(A, C)): 0.838462
+[2023-03-23 08:32:27][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 10:18:41][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839038
+[2023-03-23 10:18:41][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 10:19:08][INFO] ValAcc(avgModelNearMisses): 0.832692
+[2023-03-23 10:19:34][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.838923
+[2023-03-23 10:19:34][INFO] ValAcc(A): 0.839731
+[2023-03-23 10:19:34][INFO] Investigating whether candidate C with index 40 and ValAcc 0.804962 should be added ...
+[2023-03-23 10:20:01][INFO] ValAcc(approxAvg(A, C)): 0.838769
+[2023-03-23 10:20:01][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 12:06:06][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839192
+[2023-03-23 12:06:06][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 12:06:32][INFO] ValAcc(avgModelNearMisses): 0.832308
+[2023-03-23 12:06:59][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839154
+[2023-03-23 12:06:59][INFO] ValAcc(A): 0.839731
+[2023-03-23 12:06:59][INFO] Investigating whether candidate C with index 41 and ValAcc 0.803385 should be added ...
+[2023-03-23 12:07:26][INFO] ValAcc(approxAvg(A, C)): 0.837846
+[2023-03-23 12:07:26][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 12:07:26][INFO] ValAcc(A): 0.839731
+[2023-03-23 12:07:26][INFO] Investigating whether candidate C with index 42 and ValAcc 0.803346 should be added ...
+[2023-03-23 12:07:52][INFO] ValAcc(approxAvg(A, C)): 0.837769
+[2023-03-23 12:07:52][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 12:07:52][INFO] ValAcc(A): 0.839731
+[2023-03-23 12:07:52][INFO] Investigating whether candidate C with index 43 and ValAcc 0.802192 should be added ...
+[2023-03-23 12:08:19][INFO] ValAcc(approxAvg(A, C)): 0.837846
+[2023-03-23 12:08:19][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 12:08:19][INFO] ValAcc(A): 0.839731
+[2023-03-23 12:08:19][INFO] Investigating whether candidate C with index 44 and ValAcc 0.801846 should be added ...
+[2023-03-23 12:08:46][INFO] ValAcc(approxAvg(A, C)): 0.838308
+[2023-03-23 12:08:46][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 13:54:57][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839231
+[2023-03-23 13:54:57][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 13:55:24][INFO] ValAcc(avgModelNearMisses): 0.832808
+[2023-03-23 13:55:51][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839231
+[2023-03-23 13:55:51][INFO] ValAcc(A): 0.839731
+[2023-03-23 13:55:51][INFO] Investigating whether candidate C with index 45 and ValAcc 0.801538 should be added ...
+[2023-03-23 13:56:17][INFO] ValAcc(approxAvg(A, C)): 0.837808
+[2023-03-23 13:56:17][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 13:56:17][INFO] ValAcc(A): 0.839731
+[2023-03-23 13:56:17][INFO] Investigating whether candidate C with index 46 and ValAcc 0.801462 should be added ...
+[2023-03-23 13:56:44][INFO] ValAcc(approxAvg(A, C)): 0.838308
+[2023-03-23 13:56:44][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 15:43:08][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.839192
+[2023-03-23 15:43:08][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 15:43:35][INFO] ValAcc(avgModelNearMisses): 0.832808
+[2023-03-23 15:44:01][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839154
+[2023-03-23 15:44:01][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:44:01][INFO] Investigating whether candidate C with index 47 and ValAcc 0.801346 should be added ...
+[2023-03-23 15:44:28][INFO] ValAcc(approxAvg(A, C)): 0.837577
+[2023-03-23 15:44:28][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 15:44:28][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:44:28][INFO] Investigating whether candidate C with index 48 and ValAcc 0.799692 should be added ...
+[2023-03-23 15:44:55][INFO] ValAcc(approxAvg(A, C)): 0.837846
+[2023-03-23 15:44:55][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 15:44:55][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:44:55][INFO] Investigating whether candidate C with index 49 and ValAcc 0.799154 should be added ...
+[2023-03-23 15:45:21][INFO] ValAcc(approxAvg(A, C)): 0.837885
+[2023-03-23 15:45:21][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 15:45:21][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:45:21][INFO] Investigating whether candidate C with index 50 and ValAcc 0.798885 should be added ...
+[2023-03-23 15:45:48][INFO] ValAcc(approxAvg(A, C)): 0.838000
+[2023-03-23 15:45:48][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 15:45:48][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:45:48][INFO] Investigating whether candidate C with index 51 and ValAcc 0.798462 should be added ...
+[2023-03-23 15:46:15][INFO] ValAcc(approxAvg(A, C)): 0.837385
+[2023-03-23 15:46:15][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 15:46:15][INFO] ValAcc(A): 0.839731
+[2023-03-23 15:46:15][INFO] Investigating whether candidate C with index 52 and ValAcc 0.797885 should be added ...
+[2023-03-23 15:46:42][INFO] ValAcc(approxAvg(A, C)): 0.838308
+[2023-03-23 15:46:42][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 17:32:53][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838346
+[2023-03-23 17:32:53][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 17:33:20][INFO] ValAcc(avgModelNearMisses): 0.832192
+[2023-03-23 17:33:47][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839115
+[2023-03-23 17:33:47][INFO] ValAcc(A): 0.839731
+[2023-03-23 17:33:47][INFO] Investigating whether candidate C with index 53 and ValAcc 0.796346 should be added ...
+[2023-03-23 17:34:13][INFO] ValAcc(approxAvg(A, C)): 0.838423
+[2023-03-23 17:34:13][INFO] Starting Cobyla optimizer, fn_evals = 240
+[2023-03-23 19:20:27][INFO] ValAcc(lambdaOpt * A + (1-lambdaOpt) * C)): 0.838885
+[2023-03-23 19:20:27][INFO] Optimization not successfull, skipping Candidate C
+[2023-03-23 19:20:54][INFO] ValAcc(avgModelNearMisses): 0.831385
+[2023-03-23 19:21:20][INFO] ValAcc(approxAvg(A, avgModelNearMisses)): 0.839000
+[2023-03-23 19:21:20][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:21:20][INFO] Investigating whether candidate C with index 54 and ValAcc 0.796115 should be added ...
+[2023-03-23 19:21:47][INFO] ValAcc(approxAvg(A, C)): 0.837577
+[2023-03-23 19:21:47][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:21:47][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:21:47][INFO] Investigating whether candidate C with index 55 and ValAcc 0.795962 should be added ...
+[2023-03-23 19:22:14][INFO] ValAcc(approxAvg(A, C)): 0.836846
+[2023-03-23 19:22:14][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:22:14][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:22:14][INFO] Investigating whether candidate C with index 56 and ValAcc 0.795308 should be added ...
+[2023-03-23 19:22:41][INFO] ValAcc(approxAvg(A, C)): 0.836115
+[2023-03-23 19:22:41][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:22:41][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:22:41][INFO] Investigating whether candidate C with index 57 and ValAcc 0.794462 should be added ...
+[2023-03-23 19:23:07][INFO] ValAcc(approxAvg(A, C)): 0.837962
+[2023-03-23 19:23:07][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:23:07][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:23:07][INFO] Investigating whether candidate C with index 58 and ValAcc 0.794269 should be added ...
+[2023-03-23 19:23:34][INFO] ValAcc(approxAvg(A, C)): 0.827385
+[2023-03-23 19:23:34][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:23:34][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:23:34][INFO] Investigating whether candidate C with index 59 and ValAcc 0.793500 should be added ...
+[2023-03-23 19:24:01][INFO] ValAcc(approxAvg(A, C)): 0.838000
+[2023-03-23 19:24:01][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:24:01][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:24:01][INFO] Investigating whether candidate C with index 60 and ValAcc 0.792346 should be added ...
+[2023-03-23 19:24:27][INFO] ValAcc(approxAvg(A, C)): 0.837077
+[2023-03-23 19:24:27][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:24:27][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:24:27][INFO] Investigating whether candidate C with index 61 and ValAcc 0.792154 should be added ...
+[2023-03-23 19:24:54][INFO] ValAcc(approxAvg(A, C)): 0.837423
+[2023-03-23 19:24:54][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:24:54][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:24:54][INFO] Investigating whether candidate C with index 62 and ValAcc 0.791923 should be added ...
+[2023-03-23 19:25:21][INFO] ValAcc(approxAvg(A, C)): 0.837385
+[2023-03-23 19:25:21][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:25:21][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:25:21][INFO] Investigating whether candidate C with index 63 and ValAcc 0.791885 should be added ...
+[2023-03-23 19:25:48][INFO] ValAcc(approxAvg(A, C)): 0.837769
+[2023-03-23 19:25:48][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:25:48][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:25:48][INFO] Investigating whether candidate C with index 64 and ValAcc 0.790731 should be added ...
+[2023-03-23 19:26:15][INFO] ValAcc(approxAvg(A, C)): 0.837231
+[2023-03-23 19:26:15][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:26:15][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:26:15][INFO] Investigating whether candidate C with index 65 and ValAcc 0.790538 should be added ...
+[2023-03-23 19:26:41][INFO] ValAcc(approxAvg(A, C)): 0.836423
+[2023-03-23 19:26:41][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:26:41][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:26:41][INFO] Investigating whether candidate C with index 66 and ValAcc 0.789846 should be added ...
+[2023-03-23 19:27:08][INFO] ValAcc(approxAvg(A, C)): 0.837038
+[2023-03-23 19:27:08][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:27:08][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:27:08][INFO] Investigating whether candidate C with index 67 and ValAcc 0.787423 should be added ...
+[2023-03-23 19:27:35][INFO] ValAcc(approxAvg(A, C)): 0.836731
+[2023-03-23 19:27:35][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:27:35][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:27:35][INFO] Investigating whether candidate C with index 68 and ValAcc 0.785269 should be added ...
+[2023-03-23 19:28:01][INFO] ValAcc(approxAvg(A, C)): 0.837192
+[2023-03-23 19:28:01][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:28:01][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:28:01][INFO] Investigating whether candidate C with index 69 and ValAcc 0.785269 should be added ...
+[2023-03-23 19:28:28][INFO] ValAcc(approxAvg(A, C)): 0.837192
+[2023-03-23 19:28:28][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:28:28][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:28:28][INFO] Investigating whether candidate C with index 70 and ValAcc 0.781308 should be added ...
+[2023-03-23 19:28:55][INFO] ValAcc(approxAvg(A, C)): 0.835538
+[2023-03-23 19:28:55][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:28:55][INFO] ValAcc(A): 0.839731
+[2023-03-23 19:28:55][INFO] Investigating whether candidate C with index 71 and ValAcc 0.780808 should be added ...
+[2023-03-23 19:29:22][INFO] ValAcc(approxAvg(A, C)): 0.837385
+[2023-03-23 19:29:22][INFO] Short-circuit: Skipping optimization step for candidate C
+[2023-03-23 19:29:24][INFO] Calculating accuracy of model 'fusedModelPhase1' on available datasets ...
+[2023-03-23 19:30:16][INFO] Accuracy of 'fusedModelPhase1 on 'ImageNet': 0.809500
+[2023-03-23 19:30:28][INFO] Accuracy of 'fusedModelPhase1 on 'ImageNetV2': 0.696700
+[2023-03-23 19:32:07][INFO] Accuracy of 'fusedModelPhase1 on 'ImageNetSketch': 0.481519
+[2023-03-23 19:32:37][INFO] Accuracy of 'fusedModelPhase1 on 'ImageNetR': 0.648100
+[2023-03-23 19:37:50][INFO] Accuracy of 'fusedModelPhase1 on 'ObjectNet': 0.456552
+[2023-03-23 19:37:58][INFO] Accuracy of 'fusedModelPhase1 on 'ImageNetA': 0.290667
+[2023-03-23 19:37:58][INFO] Average out-of-distribution accuracy: 0.514707
+[2023-03-23 19:37:58][INFO] Saving results of phase 1 to file: phase1_results 
